@@ -36,3 +36,8 @@ window.ace_set_mode = function (id, mode) {
 //window.ace_change = function updateMessageCallerJS(editor) {
 //    DotNet.invokeMethodAsync('SoapBerry.Website', 'AceEditorValueChanged', editor.getValue());
 //}
+
+window.ScrollIntoView = function (id) {
+    var element = document.getElementById(id);
+    element.scrollIntoView();
+}

@@ -38,6 +38,7 @@ namespace Blace.Editor.Components
         public async Task SelectFile(IEditorFile file)
         {
             SelectedFile = file;
+            await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}");
             StateHasChanged();
         }
 
@@ -50,6 +51,29 @@ namespace Blace.Editor.Components
         public async Task CloseFile(IEditorFile file)
         {
 
+        }
+
+        public async Task SelectNextFile()
+        {
+            await SelectFile(+1);
+        }
+
+        public async Task SelectPreviousFile()
+        {
+            await SelectFile(-1);
+        }
+
+        private async Task SelectFile(int delta)
+        {
+            var indexOfFile = Files.IndexOf(SelectedFile);
+            indexOfFile += delta;
+
+            if (indexOfFile <= 0)
+                await SelectFile(Files.FirstOrDefault());
+            else if (indexOfFile >= Files.Count)
+                await SelectFile(Files.LastOrDefault());
+            else
+                await SelectFile(Files[indexOfFile]);
         }
     }
 }

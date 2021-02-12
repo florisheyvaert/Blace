@@ -14,6 +14,7 @@ namespace Blace.Editor.Components
         private AceEditor _aceEditor;
 
         [Parameter] public List<IEditorFile> Files { get; set; }
+        [Parameter] public Func<Task<bool>> AskConfirmation { get; set; }
         [Inject] public IJSRuntime JS { get; set; }
 
         public string Id { get => $"editor-{GetHashCode()}"; }
@@ -28,11 +29,6 @@ namespace Blace.Editor.Components
             }
 
             await base.OnAfterRenderAsync(firstRender);
-        }
-
-        public async Task NewFile(int index = 0)
-        {
-
         }
 
         public async Task SelectFile(IEditorFile file)
@@ -50,7 +46,13 @@ namespace Blace.Editor.Components
 
         public async Task CloseFile(IEditorFile file)
         {
-
+            var save = false;
+            if (AskConfirmation is object)
+                save = await AskConfirmation.Invoke();
+            if (save)
+                await file.Save();
+            Files.Remove(file);
+            StateHasChanged();
         }
 
         public async Task SelectNextFile()

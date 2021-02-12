@@ -6,11 +6,11 @@
 <Blace.Editor.Components.Editor Files="Files" />
 
 @code {
-    public List<IEditorFile> Files { get; set; }
+    public List<BaseEditorFile> Files { get; set; }
 
     protected override Task OnInitializedAsync()
     {
-        Files = new List<IEditorFile>()
+        Files = new List<BaseEditorFile>()
         {
             new TestEditorFile("file1"),
             new TestEditorFile("file2"),

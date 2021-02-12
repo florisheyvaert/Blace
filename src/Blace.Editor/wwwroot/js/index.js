@@ -39,5 +39,5 @@ window.ace_set_mode = function (id, mode) {
 
 window.ScrollIntoView = function (id) {
     var element = document.getElementById(id);
-    element.scrollIntoView();
+    element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 }

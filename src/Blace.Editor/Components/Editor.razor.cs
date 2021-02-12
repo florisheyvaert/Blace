@@ -13,12 +13,12 @@ namespace Blace.Editor.Components
     {
         private AceEditor _aceEditor;
 
-        [Parameter] public List<IEditorFile> Files { get; set; }
+        [Parameter] public List<BaseEditorFile> Files { get; set; }
         [Parameter] public Func<Task<bool>> AskConfirmation { get; set; }
         [Inject] public IJSRuntime JS { get; set; }
 
         public string Id { get => $"editor-{GetHashCode()}"; }
-        public IEditorFile SelectedFile { get; set; }
+        public BaseEditorFile SelectedFile { get; set; }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -31,20 +31,20 @@ namespace Blace.Editor.Components
             await base.OnAfterRenderAsync(firstRender);
         }
 
-        public async Task SelectFile(IEditorFile file)
+        public async Task SelectFile(BaseEditorFile file)
         {
             SelectedFile = file;
             await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}");
             StateHasChanged();
         }
 
-        public async Task OpenFile(IEditorFile file)
+        public async Task OpenFile(BaseEditorFile file)
         {
             file.Content = await file.LoadContent();
             await SelectFile(file);
         }
 
-        public async Task CloseFile(IEditorFile file)
+        public async Task CloseFile(BaseEditorFile file)
         {
             var save = false;
             if (AskConfirmation is object)

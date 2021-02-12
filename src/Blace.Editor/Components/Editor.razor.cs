@@ -24,7 +24,7 @@ namespace Blace.Editor.Components
         {
             if (firstRender)
             {
-                _aceEditor = new AceEditor(Id, JS);
+                _aceEditor = new AceEditor(Id, JS, ValueChanged);
                 await _aceEditor.Load();
             }
 
@@ -35,12 +35,13 @@ namespace Blace.Editor.Components
         {
             SelectedFile = file;
             await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}");
+            await _aceEditor.SetValue(file.Content);
             StateHasChanged();
         }
 
         public async Task OpenFile(BaseEditorFile file)
         {
-            file.Content = await file.LoadContent();
+            file.Content = await file.Load();
             await SelectFile(file);
         }
 
@@ -76,6 +77,15 @@ namespace Blace.Editor.Components
                 await SelectFile(Files.LastOrDefault());
             else
                 await SelectFile(Files[indexOfFile]);
+        }
+
+        private void ValueChanged(string value)
+        {
+            if (SelectedFile is object)
+            {
+                SelectedFile.Content = value;
+                StateHasChanged();
+            }
         }
     }
 }

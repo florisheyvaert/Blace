@@ -11,11 +11,13 @@ namespace Blace.Editor.Editing
     {
         private readonly string _id;
         private readonly IJSRuntime _js;
+        private static Action<string> _valueChanged;
 
-        public AceEditor(string id, IJSRuntime jSRuntime)
+        public AceEditor(string id, IJSRuntime jSRuntime, Action<string> valueChanged)
         {
             _id = id;
             _js = jSRuntime;
+            _valueChanged = valueChanged;
         }
 
         public async Task Load()
@@ -35,7 +37,13 @@ namespace Blace.Editor.Editing
 
         public async Task SetValue(string value)
         {
-            await _js.InvokeVoidAsync("ace_set_value", _id, value);
+            await _js.InvokeVoidAsync("ace_set_value", _id, string.IsNullOrWhiteSpace(value) ? string.Empty : value);
+        }
+
+        [JSInvokable]
+        public static void AceEditorValueChanged(string value)
+        {
+            _valueChanged.Invoke(value);
         }
     }
 }

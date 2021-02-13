@@ -14,7 +14,7 @@ body {
     --header-color: #444;
     --header-settins-color: #222;
     --header-active-color: #333;
-    --settings-color: rgba(1, 1, 1, .5);
+    --settings-color: rgba(1, 1, 1, .75);
     --hover-color: red;
 }
 
@@ -24,13 +24,18 @@ svg {
     width: .75rem;
     height: .75rem;
     fill: var(--text-color);
-    margin: .375rem;
+    padding: 1rem 0.375rem;
     cursor: pointer;
 }
 
     svg:hover {
         fill: var(--hover-color);
     }
+
+
+.editor-header-tab svg {
+    padding: .375rem !important;
+}
 
 .editor-container {
     width: 100%;
@@ -85,8 +90,7 @@ svg {
     background-color: var(--header-settins-color);
     width: 5rem;
     float: left;
-    height: 1.5rem;
-    padding: .5rem 0;
+    height: 2.5rem;
 }
 
 

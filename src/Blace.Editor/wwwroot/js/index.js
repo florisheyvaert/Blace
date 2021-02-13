@@ -37,8 +37,18 @@ window.ace_change = function updateMessageCallerJS(editor) {
     DotNet.invokeMethodAsync('Blace.Editor', 'AceEditorValueChanged', editor.getValue());
 }
 
-window.ScrollIntoView = function (id) {
+window.ScrollIntoView = function (id, parentId) {
     var element = document.getElementById(id);
-    element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-    //element.scrollBy(100, 0);
+    var parentElement = document.getElementById(parentId);
+    element.scrollIntoView();
+    if (isLeftSide(element))
+        parentElement.scrollLeft -= 20;
+    else
+        parentElement.scrollLeft += 20;
+}
+
+function isLeftSide(element) {
+    var viewWidth = Math.max(document.documentElement.clientWidth, window.innerWidth);
+    var x = element.getBoundingClientRect().x;
+    return x <= (viewWidth / 2);
 }

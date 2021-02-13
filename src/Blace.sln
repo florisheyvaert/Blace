@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blace.Editor", "Blace.Editor\Blace.Editor.csproj", "{F227010F-A5DC-4607-9F3D-58E70A14519C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blace.Editor", "Blace.Editor\Blace.Editor.csproj", "{F227010F-A5DC-4607-9F3D-58E70A14519C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blace", "Blace\Blace.csproj", "{C2345552-8772-4438-AB15-039E827DABC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F227010F-A5DC-4607-9F3D-58E70A14519C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F227010F-A5DC-4607-9F3D-58E70A14519C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F227010F-A5DC-4607-9F3D-58E70A14519C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2345552-8772-4438-AB15-039E827DABC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2345552-8772-4438-AB15-039E827DABC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2345552-8772-4438-AB15-039E827DABC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2345552-8772-4438-AB15-039E827DABC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

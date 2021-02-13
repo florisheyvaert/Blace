@@ -1,4 +1,4 @@
-﻿using Blace.Editor.Editing;
+﻿using Blace.Editing;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blace.Editor.Components
+namespace Blace.Components
 {
     public class EditorBase : ComponentBase
     {
@@ -76,6 +76,7 @@ namespace Blace.Editor.Components
 
         public async Task ToggleSettings()
         {
+            await Task.Delay(0);
             SettingsHidden = !SettingsHidden;
         }
 

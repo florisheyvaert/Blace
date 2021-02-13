@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blace.Editor.Editing
+namespace Blace.Editing
 {
     public class AceEditor
     {

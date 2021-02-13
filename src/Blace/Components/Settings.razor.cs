@@ -1,4 +1,4 @@
-﻿using Blace.Editor.Editing;
+﻿using Blace.Editing;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blace.Editor.Components
+namespace Blace.Components
 {
     public class SettingsBase : ComponentBase
     {

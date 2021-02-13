@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Blace.Editor.Editing
+namespace Blace.Editing
 {
     public class AceRepository
     {
@@ -24,7 +24,7 @@ namespace Blace.Editor.Editing
             var themes = new List<string>();
             foreach (var theme in result)
                 themes.Add($"ace/theme/{theme}");
-            return themes;
+            return await Task.FromResult(themes);
         }
 
         public async Task<List<string>> GetModes()
@@ -33,7 +33,7 @@ namespace Blace.Editor.Editing
             var modes = new List<string>();
             foreach (var mode in result)
                 modes.Add($"ace/mode/{mode}");
-            return modes;
+            return await Task.FromResult(modes);
         }
 
         private List<string> GetLocationWithRegex(string pattern)

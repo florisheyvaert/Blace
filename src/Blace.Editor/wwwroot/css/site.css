@@ -19,29 +19,31 @@ body {
 
 /* EDITOR */
 
+svg {
+    width: .75rem;
+    height: .75rem;
+    fill: var(--text-color);
+    margin: .375rem;
+    cursor:pointer;
+}
+
+    svg:hover {
+        fill: var(--hover-color);
+    }
+
 .editor-container {
     width: 100%;
     height: 100%;
 }
 
 .editor-header {
-    width: 100%;
+    width: calc(100% - 5rem);
     height: 2.5rem;
     overflow: hidden;
     background-color: var(--header-color);
     display: flex;
+    float:left;
 }
-
-    .editor-header svg {
-        width: .75rem;
-        height: .75rem;
-        fill: var(--text-color);
-        margin: .375rem;
-    }
-
-        .editor-header svg:hover {
-            fill: var(--hover-color);
-        }
 
 .editor-header-tab {
     cursor: pointer;
@@ -53,6 +55,7 @@ body {
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
+    scroll-
 }
 
     .editor-header-tab h4 {
@@ -77,7 +80,16 @@ body {
     width: calc(100% - 1.5rem);
 }
 
-.editor-paging {
+.editor-header-settings {
+    color: var(--text-color);
+    background-color: var(--header-settins-color);
+    width: 5rem;
+    float: left;
+    height: 1.5rem;
+    padding: .5rem 0;
+}
+
+/*.editor-paging {
     position: absolute;
     right: 1.5rem;
     top: 0rem;
@@ -95,7 +107,7 @@ body {
     color: var(--text-color);
     padding: .375rem;
     background-color: var(--header-settins-color);
-}
+}*/
 
 
 
@@ -106,13 +118,13 @@ body {
 }
 
 
-    /*    .editor-settings svg {
+/*    .editor-settings svg {
         width: 1rem;
         height: 1rem;
         cursor: pointer;
         fill: var(--text-color);
     }*/
-    /*.editor-container {
+/*.editor-container {
     height: 100%;
     width: calc(100%);
     position: relative;
@@ -126,7 +138,7 @@ body {
 
 
 */
-    /*.
+/*.
 
 
 

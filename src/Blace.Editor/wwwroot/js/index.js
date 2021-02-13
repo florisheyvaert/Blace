@@ -40,4 +40,5 @@ window.ace_change = function updateMessageCallerJS(editor) {
 window.ScrollIntoView = function (id) {
     var element = document.getElementById(id);
     element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+    //element.scrollBy(100, 0);
 }

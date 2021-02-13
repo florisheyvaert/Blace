@@ -26,9 +26,17 @@ namespace Blace.Editor.Components
             {
                 _aceEditor = new AceEditor(Id, JS, ValueChanged);
                 await _aceEditor.Load();
+
+                foreach (var file in Files)
+                    await OpenFile(file);
             }
 
             await base.OnAfterRenderAsync(firstRender);
+        }
+
+        protected override async Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
         }
 
         public async Task SelectFile(BaseEditorFile file)

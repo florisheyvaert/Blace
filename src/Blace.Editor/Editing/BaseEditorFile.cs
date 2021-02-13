@@ -19,7 +19,7 @@ namespace Blace.Editor.Editing
 
         public async Task<string> Load()
         {
-            Content = await Load();
+            Content = await LoadContent();
             _originalContent = Content;
             return Content;
         }

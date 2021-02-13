@@ -14,6 +14,7 @@ body {
     --header-color: #444;
     --header-settins-color: #222;
     --header-active-color: #333;
+    --settings-color: rgba(1, 1, 1, .5);
     --hover-color: red;
 }
 
@@ -24,7 +25,7 @@ svg {
     height: .75rem;
     fill: var(--text-color);
     margin: .375rem;
-    cursor:pointer;
+    cursor: pointer;
 }
 
     svg:hover {
@@ -42,7 +43,7 @@ svg {
     overflow: hidden;
     background-color: var(--header-color);
     display: flex;
-    float:left;
+    float: left;
 }
 
 .editor-header-tab {
@@ -55,7 +56,6 @@ svg {
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
-    scroll-
 }
 
     .editor-header-tab h4 {
@@ -89,107 +89,37 @@ svg {
     padding: .5rem 0;
 }
 
-/*.editor-paging {
-    position: absolute;
-    right: 1.5rem;
-    top: 0rem;
-    cursor: pointer;
-    color: var(--text-color);
-    padding: .375rem;
-    background-color: var(--header-settins-color);
-}
-
-.editor-settings {
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    color: var(--text-color);
-    padding: .375rem;
-    background-color: var(--header-settins-color);
-}*/
-
-
-
 
 .editor-content {
     width: 100%;
     height: calc(100% - 2.5rem);
 }
 
+/* SETTINGS */
 
-/*    .editor-settings svg {
-        width: 1rem;
-        height: 1rem;
-        cursor: pointer;
-        fill: var(--text-color);
-    }*/
-/*.editor-container {
-    height: 100%;
-    width: calc(100%);
-    position: relative;
+.settings {
+    position: absolute;
+    top: 2.5rem;
+    z-index: 10;
+    left: 0;
+    padding: .5rem;
+    width: calc(100% - 1rem);
+    height: calc(100% - 3.5rem);
+    background-color: var(--settings-color);
+    color: white;
 }
 
-
-
-
-
-
-
-
-*/
-/*.
-
-
-
-.editor-header-tab-title {
-    display: flex;
-    width: 100%;
-}
-
-.editor-header-tab {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    width: 10rem;
-    padding-left: .25rem;
-    padding-right: .5rem;
-    color: var(--text-color);
-    background-color: var(--header-color);
-    min-width: 10rem;
-}
-
-    .editor-header-tab:hover {
-        opacity: .75;
+    .settings h2 {
+        margin-top: 0;
     }
 
-    .editor-header-tab.active {
-        background-color: var(--header-active-color);
-        min-width: 10rem;
-        max-width: inherit;
-        width: auto;
-    }
-
-        .editor-header-tab.active:hover {
-            opacity: 1;
-        }
-
-    .editor-header-tab h4 {
-        font-size: 1rem;
-        margin: 0;
-        font-weight: normal;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    .settings select {
         width: 100%;
+        padding: .25rem;
     }
 
-    .editor-header-tab i {
-        z-index: 10;
-        margin-left: .25rem;
+    .settings label {
+        margin-bottom: 1rem;
+        display: inherit;
+        padding: .5rem;
     }
-
-
-}*/

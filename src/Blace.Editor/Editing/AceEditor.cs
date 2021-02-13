@@ -13,6 +13,10 @@ namespace Blace.Editor.Editing
         private readonly IJSRuntime _js;
         private static Action<string> _valueChanged;
 
+        public string Theme { get; private set; }
+        public string Mode { get; private set; }
+        public string Value { get; private set; }
+
         public AceEditor(string id, IJSRuntime jSRuntime, Action<string> valueChanged)
         {
             _id = id;
@@ -22,22 +26,28 @@ namespace Blace.Editor.Editing
 
         public async Task Load()
         {
-            await _js.InvokeVoidAsync("ace_load", _id, "ace/theme/monokai", "ace/mode/python");
+            Theme = "ace/theme/monokai";
+            Mode = "ace/mode/python";
+            await _js.InvokeVoidAsync("ace_load", _id, Theme, Mode);
         }
 
         public async Task SetTheme(string theme)
         {
             await _js.InvokeVoidAsync("ace_set_theme", _id, theme);
+            Theme = theme;
         }
 
         public async Task SetMode(string mode)
         {
             await _js.InvokeVoidAsync("ace_set_mode", _id, mode);
+            Mode = mode;
         }
 
         public async Task SetValue(string value)
         {
-            await _js.InvokeVoidAsync("ace_set_value", _id, string.IsNullOrWhiteSpace(value) ? string.Empty : value);
+            var text = string.IsNullOrWhiteSpace(value) ? string.Empty : value;
+            await _js.InvokeVoidAsync("ace_set_value", _id, text);
+            Value = text;
         }
 
         [JSInvokable]

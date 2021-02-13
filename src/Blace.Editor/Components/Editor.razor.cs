@@ -11,21 +11,21 @@ namespace Blace.Editor.Components
 {
     public class EditorBase : ComponentBase
     {
-        private AceEditor _aceEditor;
-
         [Parameter] public List<BaseEditorFile> Files { get; set; }
         [Parameter] public Func<Task<bool>> AskConfirmation { get; set; }
         [Inject] public IJSRuntime JS { get; set; }
 
         public string Id { get => $"editor-{GetHashCode()}"; }
         public BaseEditorFile SelectedFile { get; set; }
+        public AceEditor AceEditor { get; set; }
+        public bool SettingsHidden { get; set; } = true;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             {
-                _aceEditor = new AceEditor(Id, JS, ValueChanged);
-                await _aceEditor.Load();
+                AceEditor = new AceEditor(Id, JS, ValueChanged);
+                await AceEditor.Load();
 
                 foreach (var file in Files)
                     await OpenFile(file);
@@ -43,7 +43,7 @@ namespace Blace.Editor.Components
         {
             SelectedFile = file;
             await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}");
-            await _aceEditor.SetValue(file.Content);
+            await AceEditor.SetValue(file.Content);
             StateHasChanged();
         }
 
@@ -72,6 +72,11 @@ namespace Blace.Editor.Components
         public async Task SelectPreviousFile()
         {
             await SelectFile(-1);
+        }
+
+        public async Task ToggleSettings()
+        {
+            SettingsHidden = !SettingsHidden;
         }
 
         private async Task SelectFile(int delta)

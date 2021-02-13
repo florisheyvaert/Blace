@@ -24,7 +24,7 @@ namespace Blace.Editor.Components
         {
             if (firstRender)
             {
-                AceEditor = new AceEditor(Id, JS, ValueChanged);
+                AceEditor = new AceEditor(Id, JS, ValueChanged, ShortcutSavePressed);
                 await AceEditor.Load();
 
                 foreach (var file in Files)
@@ -97,6 +97,15 @@ namespace Blace.Editor.Components
             if (SelectedFile is object)
             {
                 SelectedFile.Content = value;
+                StateHasChanged();
+            }
+        }
+
+        private async Task ShortcutSavePressed()
+        {
+            if (SelectedFile is object)
+            {
+                await SelectedFile.Save();
                 StateHasChanged();
             }
         }

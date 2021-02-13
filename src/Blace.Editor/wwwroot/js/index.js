@@ -7,15 +7,14 @@ window.ace_load = function (id, theme, mode) {
     editor.session.on("change", function () {
         ace_change(editor);
     });
-    //editor.commands.addCommand({
-    //    name: 'SaveCmomand',
-    //    bindKey: { win: 'Ctrl-S', mac: 'Command-S' },
-    //    exec: function (editor) {
-    //        console.log('test');
-    //        DotNet.invokeMethodAsync('SoapBerry.Website', 'AceEditorSave', '');
-    //    },
-    //    readOnly: false // false if this command should not apply in readOnly mode
-    //});
+    editor.commands.addCommand({
+        name: 'SaveCmomand',
+        bindKey: { win: 'Ctrl-S', mac: 'Command-S' },
+        exec: function (editor) {
+            DotNet.invokeMethodAsync('Blace.Editor', 'AceEditorSave', '');
+        },
+        readOnly: false // false if this command should not apply in readOnly mode
+    });
 }
 
 window.ace_set_theme = function (id, theme) {

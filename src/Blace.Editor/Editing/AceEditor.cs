@@ -12,16 +12,18 @@ namespace Blace.Editor.Editing
         private readonly string _id;
         private readonly IJSRuntime _js;
         private static Action<string> _valueChanged;
+        private static Func<Task> _shortcutSavePressed;
 
         public string Theme { get; private set; }
         public string Mode { get; private set; }
         public string Value { get; private set; }
 
-        public AceEditor(string id, IJSRuntime jSRuntime, Action<string> valueChanged)
+        public AceEditor(string id, IJSRuntime jSRuntime, Action<string> valueChanged, Func<Task> shortcutSavePressed)
         {
             _id = id;
             _js = jSRuntime;
             _valueChanged = valueChanged;
+            _shortcutSavePressed = shortcutSavePressed;
         }
 
         public async Task Load()
@@ -54,6 +56,12 @@ namespace Blace.Editor.Editing
         public static void AceEditorValueChanged(string value)
         {
             _valueChanged.Invoke(value);
+        }
+
+        [JSInvokable]
+        public static async Task AceEditorSave()
+        {
+            await _shortcutSavePressed.Invoke();
         }
     }
 }

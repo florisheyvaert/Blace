@@ -14,7 +14,7 @@ namespace Blace.Editor.Editing
         public string Content { get; set; }
         public bool IsChanged { get => _originalContent != Content; }
 
-        public abstract Task<bool> Save();
+        public abstract Task<bool> SaveContent();
         public abstract Task<string> LoadContent();
 
         public async Task<string> Load()
@@ -22,6 +22,13 @@ namespace Blace.Editor.Editing
             Content = await LoadContent();
             _originalContent = Content;
             return Content;
+        }
+
+        public async Task<bool> Save()
+        {
+            var success = await SaveContent();
+            _originalContent = Content;
+            return success;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Blace.Editor.Testing
             return Task.FromResult("Dit is een test");
         }
 
-        public override Task<bool> Save()
+        public override Task<bool> SaveContent()
         {
             return Task.FromResult(true);
         }

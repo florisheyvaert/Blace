@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Floris Heyvaert</Authors>
+    <Product />
+    <Description>ACE editor component for Blazor</Description>
   </PropertyGroup>
 
   
@@ -11,12 +14,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="wwwroot\js\index.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

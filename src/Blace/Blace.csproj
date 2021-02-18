@@ -8,16 +8,6 @@
     <Version>1.0.3</Version>
     <RepositoryUrl>https://github.com/florisheyvaert/Blace</RepositoryUrl>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\ace\ace.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="wwwroot\ace\ace.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
   
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -28,738 +18,741 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="wwwroot\ace\ext-beautify.js">
+    <Content Update="wwwroot\ace\ext-beautify.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-code_lens.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-code_lens.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-elastic_tabstops_lite.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-elastic_tabstops_lite.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-emmet.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-emmet.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-error_marker.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-error_marker.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-keybinding_menu.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-keybinding_menu.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-language_tools.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-language_tools.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-linking.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-linking.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-modelist.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-modelist.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-options.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-options.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-prompt.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-prompt.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-rtl.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-rtl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-searchbox.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-searchbox.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-settings_menu.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-settings_menu.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-spellcheck.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-spellcheck.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-split.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-split.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-static_highlight.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-static_highlight.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-statusbar.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-statusbar.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-textarea.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-textarea.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-themelist.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-themelist.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\ext-whitespace.js">
+    </Content>
+    <Content Update="wwwroot\ace\ext-whitespace.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\keybinding-emacs.js">
+    </Content>
+    <Content Update="wwwroot\ace\keybinding-emacs.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\keybinding-sublime.js">
+    </Content>
+    <Content Update="wwwroot\ace\keybinding-sublime.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\keybinding-vim.js">
+    </Content>
+    <Content Update="wwwroot\ace\keybinding-vim.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\keybinding-vscode.js">
+    </Content>
+    <Content Update="wwwroot\ace\keybinding-vscode.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-abap.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-abap.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-abc.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-abc.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-actionscript.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-actionscript.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-ada.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-ada.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-alda.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-alda.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-apache_conf.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-apache_conf.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-apex.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-apex.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-applescript.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-applescript.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-aql.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-aql.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-asciidoc.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-asciidoc.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-asl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-asl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-assembly_x86.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-assembly_x86.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-autohotkey.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-autohotkey.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-batchfile.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-batchfile.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-c9search.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-c9search.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-cirru.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-cirru.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-clojure.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-clojure.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-cobol.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-cobol.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-coffee.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-coffee.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-coldfusion.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-coldfusion.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-crystal.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-crystal.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-csharp.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-csharp.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-csound_document.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-csound_document.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-csound_orchestra.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-csound_orchestra.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-csound_score.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-csound_score.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-csp.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-csp.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-css.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-css.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-curly.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-curly.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-c_cpp.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-c_cpp.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-d.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-d.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-dart.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-dart.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-diff.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-diff.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-django.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-django.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-dockerfile.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-dockerfile.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-dot.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-dot.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-drools.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-drools.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-edifact.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-edifact.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-eiffel.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-eiffel.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-ejs.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-ejs.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-elixir.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-elixir.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-elm.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-elm.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-erlang.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-erlang.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-forth.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-forth.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-fortran.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-fortran.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-fsharp.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-fsharp.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-fsl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-fsl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-ftl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-ftl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-gcode.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-gcode.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-gherkin.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-gherkin.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-gitignore.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-gitignore.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-glsl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-glsl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-gobstones.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-gobstones.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-golang.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-golang.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-graphqlschema.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-graphqlschema.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-groovy.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-groovy.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-haml.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-haml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-handlebars.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-handlebars.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-haskell.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-haskell.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-haskell_cabal.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-haskell_cabal.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-haxe.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-haxe.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-hjson.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-hjson.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-html.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-html.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-html_elixir.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-html_elixir.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-html_ruby.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-html_ruby.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-ini.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-ini.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-io.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-io.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-jack.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-jack.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-jade.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-jade.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-java.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-java.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-javascript.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-javascript.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-json.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-json.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-json5.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-json5.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-jsoniq.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-jsoniq.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-jsp.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-jsp.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-jssm.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-jssm.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-jsx.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-jsx.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-julia.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-julia.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-kotlin.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-kotlin.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-latex.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-latex.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-less.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-less.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-liquid.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-liquid.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-lisp.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-lisp.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-livescript.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-livescript.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-logiql.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-logiql.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-logtalk.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-logtalk.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-lsl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-lsl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-lua.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-lua.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-luapage.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-luapage.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-lucene.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-lucene.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-makefile.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-makefile.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-markdown.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-markdown.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-mask.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-mask.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-matlab.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-matlab.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-maze.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-maze.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-mediawiki.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-mediawiki.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-mel.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-mel.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-mixal.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-mixal.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-mushcode.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-mushcode.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-mysql.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-mysql.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-nginx.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-nginx.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-nim.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-nim.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-nix.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-nix.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-nsis.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-nsis.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-nunjucks.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-nunjucks.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-objectivec.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-objectivec.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-ocaml.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-ocaml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-pascal.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-pascal.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-perl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-perl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-perl6.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-perl6.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-pgsql.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-pgsql.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-php.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-php.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-php_laravel_blade.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-php_laravel_blade.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-pig.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-pig.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-plain_text.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-plain_text.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-powershell.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-powershell.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-praat.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-praat.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-prisma.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-prisma.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-prolog.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-prolog.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-properties.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-properties.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-protobuf.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-protobuf.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-puppet.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-puppet.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-python.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-python.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-qml.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-qml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-r.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-r.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-razor.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-razor.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-rdoc.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-rdoc.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-red.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-red.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-redshift.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-redshift.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-rhtml.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-rhtml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-rst.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-rst.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-ruby.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-ruby.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-rust.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-rust.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-sass.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-sass.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-scad.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-scad.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-scala.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-scala.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-scheme.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-scheme.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-scss.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-scss.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-sh.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-sh.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-sjs.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-sjs.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-slim.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-slim.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-smarty.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-smarty.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-snippets.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-snippets.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-soy_template.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-soy_template.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-space.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-space.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-sparql.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-sparql.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-sql.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-sql.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-sqlserver.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-sqlserver.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-stylus.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-stylus.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-svg.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-svg.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-swift.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-swift.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-tcl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-tcl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-terraform.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-terraform.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-tex.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-tex.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-text.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-text.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-textile.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-textile.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-toml.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-toml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-tsx.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-tsx.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-turtle.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-turtle.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-twig.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-twig.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-typescript.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-typescript.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-vala.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-vala.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-vbscript.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-vbscript.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-velocity.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-velocity.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-verilog.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-verilog.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-vhdl.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-vhdl.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-visualforce.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-visualforce.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-wollok.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-wollok.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-xml.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-xml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-xquery.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-xquery.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-yaml.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-yaml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\mode-zeek.js">
+    </Content>
+    <Content Update="wwwroot\ace\mode-zeek.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-ambiance.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-ambiance.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-chaos.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-chaos.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-chrome.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-chrome.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-clouds.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-clouds.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-clouds_midnight.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-clouds_midnight.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-cobalt.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-cobalt.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-crimson_editor.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-crimson_editor.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-dawn.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-dawn.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-dracula.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-dracula.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-dreamweaver.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-dreamweaver.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-eclipse.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-eclipse.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-github.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-github.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-gob.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-gob.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-gruvbox.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-gruvbox.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-idle_fingers.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-idle_fingers.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-iplastic.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-iplastic.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-katzenmilch.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-katzenmilch.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-kr_theme.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-kr_theme.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-kuroir.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-kuroir.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-merbivore.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-merbivore.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-merbivore_soft.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-merbivore_soft.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-monokai.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-monokai.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-mono_industrial.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-mono_industrial.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-nord_dark.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-nord_dark.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-pastel_on_dark.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-pastel_on_dark.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-solarized_dark.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-solarized_dark.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-solarized_light.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-solarized_light.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-sqlserver.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-sqlserver.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-terminal.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-terminal.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-textmate.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-textmate.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-tomorrow.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-tomorrow.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-tomorrow_night.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-tomorrow_night.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-tomorrow_night_blue.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-tomorrow_night_blue.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-tomorrow_night_bright.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-tomorrow_night_bright.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-tomorrow_night_eighties.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-tomorrow_night_eighties.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-twilight.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-twilight.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-vibrant_ink.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-vibrant_ink.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\theme-xcode.js">
+    </Content>
+    <Content Update="wwwroot\ace\theme-xcode.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-base.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-base.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-coffee.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-coffee.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-css.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-css.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-html.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-html.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-javascript.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-javascript.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-json.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-json.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-lua.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-lua.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-php.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-php.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-xml.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-xml.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\ace\worker-xquery.js">
+    </Content>
+    <Content Update="wwwroot\ace\worker-xquery.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
+    <Content Update="wwwroot\ace\ace.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

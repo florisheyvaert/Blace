@@ -19,6 +19,7 @@ namespace Blace.Components
         public BaseEditorFile SelectedFile { get; set; }
         public AceEditor AceEditor { get; set; }
         public bool SettingsHidden { get; set; } = true;
+        public bool LoadingContent { get; set; }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -59,8 +60,10 @@ namespace Blace.Components
 
         public async Task OpenFile(BaseEditorFile file)
         {
+            LoadingContent = true;
             file.Content = await file.Load();
             await SelectFile(file);
+            LoadingContent = false;
         }
 
         public async Task CloseFile(BaseEditorFile file)

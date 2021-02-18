@@ -5,6 +5,7 @@
     <Authors>Floris Heyvaert</Authors>
     <Product />
     <Description>ACE editor component for Blazor</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   

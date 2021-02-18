@@ -42,7 +42,8 @@ namespace Blace.Components
         public async Task SelectFile(BaseEditorFile file)
         {
             SelectedFile = file;
-            await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}", "editor-header");
+            var isLastFile = Files.LastOrDefault() == file;
+            await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}", "editor-header", isLastFile);
             await AceEditor.SetValue(file.Content);
             StateHasChanged();
         }

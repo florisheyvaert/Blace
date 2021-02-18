@@ -53,6 +53,10 @@ svg {
     float: left;
 }
 
+.editor-header-icons {
+    display: flex;
+}
+
 .editor-header-tab {
     cursor: pointer;
     padding: .5rem;

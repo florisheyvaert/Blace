@@ -38,6 +38,9 @@ namespace Blace.Editing
 
         private List<string> GetLocationWithRegex(string pattern)
         {
+            if (!Directory.Exists(_location))
+                return new List<string>();
+
             var files = Directory.GetFiles(_location);
             var result = new List<string>();
             foreach (var file in files)

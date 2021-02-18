@@ -3,7 +3,7 @@
 @using Testing
 @using Editing
 
-<Blace.Components.Editor Files="Files" />
+    <Blace.Components.Editor Files="Files" />
 
 @code {
     public List<BaseEditorFile> Files { get; set; }
@@ -11,7 +11,7 @@
     protected override Task OnInitializedAsync()
     {
         Files = new List<BaseEditorFile>()
-        {
+    {
             new TestEditorFile("file1"),
             new TestEditorFile("file2"),
             new TestEditorFile("file3"),

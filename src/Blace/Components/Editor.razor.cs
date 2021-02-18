@@ -42,9 +42,18 @@ namespace Blace.Components
         public async Task SelectFile(BaseEditorFile file)
         {
             SelectedFile = file;
-            var isLastFile = Files.LastOrDefault() == file;
-            await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}", "editor-header", isLastFile);
-            await AceEditor.SetValue(file.Content);
+
+            if (SelectedFile is object)
+            {
+                var isLastFile = Files.LastOrDefault() == file;
+                await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}", "editor-header", isLastFile);
+                await AceEditor.SetValue(file.Content);
+            }
+            else
+            {
+                await AceEditor.SetValue(string.Empty);
+            }
+
             StateHasChanged();
         }
 
@@ -61,18 +70,12 @@ namespace Blace.Components
                 save = await AskConfirmation.Invoke();
             if (save)
                 await file.Save();
+
+            var nextFileIndex = Files.IndexOf(SelectedFile) + 1;
             Files.Remove(file);
+            await SelectFile(nextFileIndex);
+
             StateHasChanged();
-        }
-
-        public async Task SelectNextFile()
-        {
-            await SelectFile(+1);
-        }
-
-        public async Task SelectPreviousFile()
-        {
-            await SelectFile(-1);
         }
 
         public async Task ToggleSettings()
@@ -81,17 +84,28 @@ namespace Blace.Components
             SettingsHidden = !SettingsHidden;
         }
 
-        private async Task SelectFile(int delta)
+        public async Task SelectNextFile()
         {
-            var indexOfFile = Files.IndexOf(SelectedFile);
-            indexOfFile += delta;
+            var indexOfFile = Files.IndexOf(SelectedFile) + 1;
+            await SelectFile(indexOfFile);
+        }
 
-            if (indexOfFile <= 0)
+        public async Task SelectPreviousFile()
+        {
+            var indexOfFile = Files.IndexOf(SelectedFile) - 1;
+            await SelectFile(indexOfFile);
+        }
+
+        private async Task SelectFile(int index)
+        {
+            if (Files.Count == 0)
+                await SelectFile(null);
+            if (index <= 0)
                 await SelectFile(Files.FirstOrDefault());
-            else if (indexOfFile >= Files.Count)
+            else if (index >= Files.Count)
                 await SelectFile(Files.LastOrDefault());
             else
-                await SelectFile(Files[indexOfFile]);
+                await SelectFile(Files[index]);
         }
 
         private void ValueChanged(string value)

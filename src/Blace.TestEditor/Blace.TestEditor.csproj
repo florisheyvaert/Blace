@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Blace.TestEditor</AssemblyName>
+    <RootNamespace>Blace.TestEditor</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

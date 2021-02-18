@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blace.Editor.Testing
+namespace Blace.TestEditor.Testing
 {
     public class TestEditorFile : BaseEditorFile
     {

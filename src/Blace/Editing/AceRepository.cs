@@ -11,7 +11,7 @@ namespace Blace.Editing
 {
     public class AceRepository
     {
-        private string _location;
+        private readonly string _location;
 
         public AceRepository()
         {

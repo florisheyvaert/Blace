@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Blace.Editor": {
+    "Blace.TestEditor": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

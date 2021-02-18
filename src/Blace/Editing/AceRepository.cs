@@ -11,13 +11,6 @@ namespace Blace.Editing
 {
     public class AceRepository
     {
-        private readonly string _location;
-
-        public AceRepository()
-        {
-            _location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "wwwroot", "ace");
-        }
-
         public async Task<List<string>> GetThemes()
         {
             var result = GetLocationWithRegex("theme-");
@@ -38,10 +31,7 @@ namespace Blace.Editing
 
         private List<string> GetLocationWithRegex(string pattern)
         {
-            if (!Directory.Exists(_location))
-                return new List<string>();
-
-            var files = Directory.GetFiles(_location);
+            var files = Assembly.GetCallingAssembly().GetManifestResourceNames();
             var result = new List<string>();
             foreach (var file in files)
             {

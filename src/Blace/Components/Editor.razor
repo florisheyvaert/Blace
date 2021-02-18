@@ -25,16 +25,14 @@
         {
             <div class="lds-hourglass"></div>
         }
-        else
-        {
-            <div id="@Id" hidden="@(SelectedFile is null)">
 
-                @if (SelectedFile is object)
-                {
-                    @SelectedFile.Content
-                }
-            </div>
-        }
+        <div id="@Id" hidden="@(SelectedFile is null)">
+
+            @if (SelectedFile is object)
+            {
+                @SelectedFile.Content
+            }
+        </div>
 
         <Settings Editor="AceEditor" Hidden="SettingsHidden" />
     </div>

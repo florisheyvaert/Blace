@@ -9,7 +9,7 @@ namespace Blace.TestEditor.Testing
 {
     public class TestEditorFile : BaseEditorFile
     {
-        public TestEditorFile(string name)
+        public TestEditorFile(string name) : base(name)
         {
             Name = name;
         }

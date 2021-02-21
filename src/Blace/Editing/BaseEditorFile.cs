@@ -18,6 +18,11 @@ namespace Blace.Editing
         public abstract Task<bool> SaveContent();
         public abstract Task<string> LoadContent();
 
+        public BaseEditorFile(string name)
+        {
+            Name = name;
+        }
+
         public async Task<string> Load()
         {
             Content = await LoadContent();
@@ -39,12 +44,12 @@ namespace Blace.Editing
 
         public bool Equals(BaseEditorFile x, BaseEditorFile y)
         {
-            return x._originalContent == y._originalContent && x.Name == y.Name;
+            return x.Name == y.Name;
         }
 
         public int GetHashCode([DisallowNull] BaseEditorFile obj)
         {
-            return obj._originalContent.GetHashCode() + obj.Name.GetHashCode();
+            return obj.Name.GetHashCode();
         }
 
         public static bool operator ==(BaseEditorFile obj1, BaseEditorFile obj2)
@@ -77,7 +82,7 @@ namespace Blace.Editing
 
         public override int GetHashCode()
         {
-            return (_originalContent ?? string.Empty).GetHashCode() + (Name ?? string.Empty).GetHashCode();
+            return Name.GetHashCode();
         }
     }
 }

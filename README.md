@@ -20,7 +20,7 @@ Suggestions are welcome.
 
 Search for package 'Blace' or install through Package Manager Console:
 ```
-Install-Package Blace -Version 1.0.11
+Install-Package Blace -Version 1.0.12
 ```
 Source: https://www.nuget.org/packages/Blace/
 
@@ -55,7 +55,7 @@ Here you can specify how to load the content of the file, as what to so if savin
 ```csharp
     public class TestEditorFile : BaseEditorFile
     {
-        public TestEditorFile(string name)
+        public TestEditorFile(string name) : base(name)
         {
             Name = name;
         }

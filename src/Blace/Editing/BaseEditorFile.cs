@@ -77,7 +77,7 @@ namespace Blace.Editing
 
         public override int GetHashCode()
         {
-            return _originalContent.GetHashCode() + Name.GetHashCode();
+            return (_originalContent ?? string.Empty).GetHashCode() + (Name ?? string.Empty).GetHashCode();
         }
     }
 }

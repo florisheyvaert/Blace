@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Blace.Editing
 {
-    public abstract class BaseEditorFile
+    public abstract class BaseEditorFile : IEquatable<BaseEditorFile>, IEqualityComparer<BaseEditorFile>
     {
         private string _originalContent;
 
@@ -29,6 +30,21 @@ namespace Blace.Editing
             var success = await SaveContent();
             _originalContent = Content;
             return success;
+        }
+
+        public bool Equals(BaseEditorFile other)
+        {
+            return Equals(this, other);
+        }
+
+        public bool Equals(BaseEditorFile x, BaseEditorFile y)
+        {
+            return x._originalContent == y._originalContent && x.Name == y.Name;
+        }
+
+        public int GetHashCode([DisallowNull] BaseEditorFile obj)
+        {
+            return obj._originalContent.GetHashCode() + obj.Name.GetHashCode();
         }
     }
 }

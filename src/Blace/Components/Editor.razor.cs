@@ -63,8 +63,11 @@ namespace Blace.Components
             LoadingContent = true;
             StateHasChanged();
 
-            Files.Add(file);
-            file.Content = await file.Load();
+            if (!Files.Contains(file))
+            {
+                Files.Add(file);
+                file.Content = await file.Load();
+            }
             await SelectFile(file);
 
             LoadingContent = false;

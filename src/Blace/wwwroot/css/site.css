@@ -17,9 +17,8 @@ body {
     --header-active-color: #333;
     --settings-color: rgba(1, 1, 1, .75);
     --hover-color: red;
-    
     --header-height: 40px;
-    --icon-size: 20px;
+    --icon-size: 15px;
 }
 
 /* EDITOR */
@@ -54,6 +53,10 @@ svg {
 .editor-header-icons {
     display: flex;
 }
+
+    .editor-header-icons svg {
+        margin-left: .5rem;
+    }
 
 .editor-header-tab {
     cursor: pointer;
@@ -94,7 +97,7 @@ svg {
 .editor-header-settings {
     color: var(--text-color);
     background-color: var(--header-settins-color);
-    width: 80px;
+    width: 100px;
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
@@ -143,7 +146,7 @@ svg {
     }
 
 
-    /* LOADER */
+/* LOADER */
 
 .lds-hourglass {
     display: inline-block;

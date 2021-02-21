@@ -3,10 +3,18 @@
 @using Testing
 @using Editing
 
-    <Blace.Components.Editor Files="Files" />
+<button @onclick="async() => await AddFile()">Add file</button>
+
+    <Blace.Components.Editor @ref="Editor" Files="Files" />
 
 @code {
     public List<BaseEditorFile> Files { get; set; }
+    public Editor Editor { get; set; }
+
+    protected async Task AddFile()
+    {
+        await Editor.OpenFile(new TestEditorFile("file1"));
+    }
 
     protected override Task OnInitializedAsync()
     {

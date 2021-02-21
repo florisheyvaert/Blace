@@ -63,12 +63,14 @@ namespace Blace.Components
             LoadingContent = true;
             StateHasChanged();
 
-            if (!Files.Contains(file))
+            var existingFile = Files.FirstOrDefault(x => x == file);
+            if (existingFile is null)
             {
-                Files.Add(file);
-                file.Content = await file.Load();
+                existingFile = file;
+                Files.Add(existingFile);
+                existingFile.Content = await file.Load();
             }
-            await SelectFile(file);
+            await SelectFile(existingFile);
 
             LoadingContent = false;
             StateHasChanged();

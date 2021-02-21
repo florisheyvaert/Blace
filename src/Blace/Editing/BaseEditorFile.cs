@@ -46,5 +46,28 @@ namespace Blace.Editing
         {
             return obj._originalContent.GetHashCode() + obj.Name.GetHashCode();
         }
+
+        public static bool operator ==(BaseEditorFile obj1, BaseEditorFile obj2)
+        {
+            if (ReferenceEquals(obj1, obj2))
+            {
+                return true;
+            }
+            if (ReferenceEquals(obj1, null))
+            {
+                return false;
+            }
+            if (ReferenceEquals(obj2, null))
+            {
+                return false;
+            }
+
+            return obj1.Equals(obj2);
+        }
+
+        public static bool operator !=(BaseEditorFile obj1, BaseEditorFile obj2)
+        {
+            return !(obj1 == obj2);
+        }
     }
 }

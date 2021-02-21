@@ -1,6 +1,6 @@
 ﻿@inherits EditorTabBase
 
-<div class="editor-header-tab @(SelectedFile is object && SelectedFile == File ? "active" : string.Empty)" @onclick="async() => await OpenFileClicked.InvokeAsync(File)">
+<div class="editor-header-tab @(SelectedFile is object && SelectedFile.GetHashCode() == File.GetHashCode() ? "active" : string.Empty)" @onclick="async() => await OpenFileClicked.InvokeAsync(File)">
     <div class="editor-header-tab-title" id="editor-header-tab-@File.GetHashCode()">
         <h4>
             @File.Name

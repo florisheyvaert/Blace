@@ -57,7 +57,9 @@ window.ace_change = function updateMessageCallerJS(editor) {
 window.ScrollIntoView = function (id, parentId, addMargin) {
     var element = document.getElementById(id);
     var parentElement = document.getElementById(parentId);
-    element.scrollIntoView();
+    if (element != null) {
+        element.scrollIntoView();
+    }
     if (addMargin) {
         if (isLeftSide(element))
             parentElement.scrollLeft -= 50;

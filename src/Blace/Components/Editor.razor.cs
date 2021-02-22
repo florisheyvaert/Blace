@@ -12,14 +12,14 @@ namespace Blace.Components
     public class EditorBase : ComponentBase
     {
         [Parameter] public List<BaseEditorFile> Files { get; set; }
-        [Parameter] public Func<Task<bool>> AskConfirmation { get; set; }
-        [Inject] public IJSRuntime JS { get; set; }
+        [Parameter] public Func<BaseEditorFile,Task<bool>> SaveFileOnClose { get; set; }
+        [Inject] protected IJSRuntime JS { get; set; }
 
-        public string Id { get => $"editor-{GetHashCode()}"; }
-        public BaseEditorFile SelectedFile { get; set; }
-        public AceEditor AceEditor { get; set; }
-        public bool SettingsHidden { get; set; } = true;
-        public bool LoadingContent { get; set; } = false;
+        protected string Id { get => $"editor-{GetHashCode()}"; }
+        protected BaseEditorFile SelectedFile { get; set; }
+        protected AceEditor AceEditor { get; set; }
+        protected bool SettingsHidden { get; set; } = true;
+        protected bool LoadingContent { get; set; } = false;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -79,8 +79,8 @@ namespace Blace.Components
         public async Task CloseFile(BaseEditorFile file)
         {
             var save = false;
-            if (AskConfirmation is object)
-                save = await AskConfirmation.Invoke();
+            if (SaveFileOnClose is object)
+                save = await SaveFileOnClose.Invoke(file);
             if (save)
                 await file.Save();
 
@@ -89,12 +89,6 @@ namespace Blace.Components
             await SelectFile(nextFileIndex);
 
             StateHasChanged();
-        }
-
-        public async Task ToggleSettings()
-        {
-            await Task.Delay(0);
-            SettingsHidden = !SettingsHidden;
         }
 
         public async Task SelectNextFile()
@@ -107,6 +101,12 @@ namespace Blace.Components
         {
             var indexOfFile = Files.IndexOf(SelectedFile) - 1;
             await SelectFile(indexOfFile);
+        }
+
+        public async Task ToggleSettings()
+        {
+            await Task.Delay(0);
+            SettingsHidden = !SettingsHidden;
         }
 
         private async Task SelectFile(int index)

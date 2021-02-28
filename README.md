@@ -20,7 +20,7 @@ Suggestions are welcome.
 
 Search for package 'Blace' or install through Package Manager Console:
 ```
-Install-Package Blace -Version 1.0.12
+Install-Package Blace
 ```
 Source: https://www.nuget.org/packages/Blace/
 

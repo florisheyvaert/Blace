@@ -10,8 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NuGetCommand@2
-  inputs:
-    command: 'pack'
-    packagesToPack: '**/Blace.csproj'
-    versioningScheme: 'byBuildNumber'
+  - task: NuGetCommand@2
+    inputs:
+      command: 'pack'
+      packagesToPack: '**/Blace.csproj'
+      versioningScheme: 'byPrereleaseNumber'
+      majorVersion: '1'
+      minorVersion: '0'
+      patchVersion: '0'

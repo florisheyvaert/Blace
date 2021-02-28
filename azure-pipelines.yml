@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'Building project'
+  inputs:
+    command: 'build'
+    projects: '**/Blace.csproj'
+- task: NuGetCommand@2
+  displayName: 'Pack package'
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/Blace.csproj'
+    versioningScheme: 'off'
+- task: NuGetCommand@2
+  displayName: 'Publish package'
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Nuget.org'

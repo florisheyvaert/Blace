@@ -11,18 +11,18 @@ pool:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'Building project'
   inputs:
     command: 'build'
     projects: '**/Blace.csproj'
 - task: NuGetCommand@2
+  displayName: 'Pack package'
   inputs:
     command: 'pack'
     packagesToPack: '**/Blace.csproj'
-    versioningScheme: 'byPrereleaseNumber'
-    majorVersion: '1'
-    minorVersion: '0'
-    patchVersion: '0'
+    versioningScheme: 'off'
 - task: NuGetCommand@2
+  displayName: 'Publish package'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'

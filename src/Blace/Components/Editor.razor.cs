@@ -16,7 +16,7 @@ namespace Blace.Components
         [Inject] protected IJSRuntime JS { get; set; }
 
         protected string Id { get => $"editor-{GetHashCode()}"; }
-        protected BaseEditorFile SelectedFile { get; set; }
+        public BaseEditorFile SelectedFile { get; set; }
         protected AceEditor AceEditor { get; set; }
         protected bool SettingsHidden { get; set; } = true;
         protected bool LoadingContent { get; set; } = false;

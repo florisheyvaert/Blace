@@ -22,7 +22,7 @@ steps:
     packagesToPack: '**/Blace.csproj'
     versioningScheme: 'off'
     
-- task: DotNetCoreCLI@2
+- task: NuGetCommand@2
   displayName: 'Publish package'
   inputs:
     command: 'push'

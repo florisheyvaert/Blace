@@ -52,20 +52,20 @@ namespace Blace.Editing
 
         private void LoadOptions()
         {
-            Mode = !string.IsNullOrWhiteSpace(_options.Syntax) ? _options.Syntax : "mode-text";
-            Theme = !string.IsNullOrWhiteSpace(_options.Theme) ? _options.Theme : "theme-monokai";
+            Mode = !string.IsNullOrWhiteSpace(_options.Syntax) ? _options.Syntax : "ace/mode/text";
+            Theme = !string.IsNullOrWhiteSpace(_options.Theme) ? _options.Theme : "ace/theme/monokai";
         }
 
-        //[JSInvokable]
-        //public static void AceEditorValueChanged(string value)
-        //{
-        //    _valueChanged.Invoke(value);
-        //}
+        [JSInvokable]
+        public static void EditorValueChanged(string value)
+        {
+            // todo
+        }
 
-        //[JSInvokable]
-        //public static async Task AceEditorSave()
-        //{
-        //    await _shortcutSavePressed.Invoke();
-        //}
+        [JSInvokable]
+        public static async Task EditorCommandSave()
+        {
+            // todo
+        }
     }
 }

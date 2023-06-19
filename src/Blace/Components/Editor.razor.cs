@@ -36,6 +36,8 @@ namespace Blace.Components
                 var content = await _file.Load();
                 await _editor.SetValue(content);
             }
+
+            await InvokeAsync(StateHasChanged);
         }
 
         public async Task Save(bool close = false)
@@ -54,7 +56,8 @@ namespace Blace.Components
 
         public async Task Close()
         {
-            await _editor.SetValue(string.Empty);
+            if (_editor is object)
+                await _editor.SetValue(string.Empty);
 
             IsClosed = true;
             _file = null;
@@ -62,133 +65,5 @@ namespace Blace.Components
 
             await InvokeAsync(StateHasChanged);
         }
-
-
-        //[Parameter] public List<BaseEditorFile> Files { get; set; }
-        //[Parameter] public Func<BaseEditorFile,Task<bool>> SaveFileOnClose { get; set; }
-
-        //protected string Id { get => $"editor-{GetHashCode()}"; }
-        //public BaseEditorFile SelectedFile { get; set; }
-        //protected AceEditor AceEditor { get; set; }
-        //protected bool SettingsHidden { get; set; } = true;
-        //protected bool LoadingContent { get; set; } = false;
-
-        //protected override async Task OnAfterRenderAsync(bool firstRender)
-        //{
-        //    if (firstRender)
-        //    {
-        //        AceEditor = new AceEditor(Id, JS, ValueChanged, ShortcutSavePressed);
-        //        await AceEditor.Load();
-
-        //        foreach (var file in Files)
-        //            await OpenFile(file);
-        //    }
-
-        //    await base.OnAfterRenderAsync(firstRender);
-        //}
-
-        //protected override async Task OnInitializedAsync()
-        //{
-        //    await base.OnInitializedAsync();
-        //}
-
-        //public async Task SelectFile(BaseEditorFile file)
-        //{
-        //    SelectedFile = file;
-
-        //    if (SelectedFile is object)
-        //    {
-        //        var isLastFile = Files.LastOrDefault() == file;
-        //        await JS.InvokeVoidAsync("ScrollIntoView", $"editor-header-tab-{file.GetHashCode()}", "editor-header", isLastFile);
-        //        await AceEditor.SetValue(file.Content);
-        //    }
-        //    else
-        //    {
-        //        await AceEditor.SetValue(string.Empty);
-        //    }
-
-        //    StateHasChanged();
-        //}
-
-        //public async Task OpenFile(BaseEditorFile file)
-        //{
-        //    LoadingContent = true;
-        //    StateHasChanged();
-
-        //    var existingFile = Files.FirstOrDefault(x => x == file);
-        //    if (existingFile is null)
-        //    {
-        //        existingFile = file;
-        //        Files.Add(existingFile);
-        //        existingFile.Content = await file.Load();
-        //    }
-        //    await SelectFile(existingFile);
-
-        //    LoadingContent = false;
-        //    StateHasChanged();
-        //}
-
-        //public async Task CloseFile(BaseEditorFile file)
-        //{
-        //    var save = false;
-        //    if (SaveFileOnClose is object)
-        //        save = await SaveFileOnClose.Invoke(file);
-        //    if (save)
-        //        await file.Save();
-
-        //    var nextFileIndex = Files.IndexOf(SelectedFile) + 1;
-        //    Files.Remove(file);
-        //    await SelectFile(nextFileIndex);
-
-        //    StateHasChanged();
-        //}
-
-        //public async Task SelectNextFile()
-        //{
-        //    var indexOfFile = Files.IndexOf(SelectedFile) + 1;
-        //    await SelectFile(indexOfFile);
-        //}
-
-        //public async Task SelectPreviousFile()
-        //{
-        //    var indexOfFile = Files.IndexOf(SelectedFile) - 1;
-        //    await SelectFile(indexOfFile);
-        //}
-
-        //public async Task ToggleSettings()
-        //{
-        //    await Task.Delay(0);
-        //    SettingsHidden = !SettingsHidden;
-        //}
-
-        //private async Task SelectFile(int index)
-        //{
-        //    if (Files.Count == 0)
-        //        await SelectFile(null);
-        //    if (index <= 0)
-        //        await SelectFile(Files.FirstOrDefault());
-        //    else if (index >= Files.Count)
-        //        await SelectFile(Files.LastOrDefault());
-        //    else
-        //        await SelectFile(Files[index]);
-        //}
-
-        //private void ValueChanged(string value)
-        //{
-        //    if (SelectedFile is object)
-        //    {
-        //        SelectedFile.Content = value;
-        //        StateHasChanged();
-        //    }
-        //}
-
-        //private async Task ShortcutSavePressed()
-        //{
-        //    if (SelectedFile is object)
-        //    {
-        //        await SelectedFile.Save();
-        //        StateHasChanged();
-        //    }
-        //}
     }
 }

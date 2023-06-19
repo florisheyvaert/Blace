@@ -22,14 +22,16 @@ window.ace_load = function (id, theme, mode) {
     editor.setTheme(theme);
     editor.session.setMode(mode);
     editor.setShowPrintMargin(false);
+
     editor.session.on("change", function () {
-        ace_change(editor);
+        DotNet.invokeMethodAsync(assembly, 'EditorValueChanged', editor.getValue());
     });
+
     editor.commands.addCommand({
         name: 'SaveCmomand',
         bindKey: { win: 'Ctrl-S', mac: 'Command-S' },
         exec: function (editor) {
-            DotNet.invokeMethodAsync(assembly, 'AceEditorSave', '');
+            DotNet.invokeMethodAsync(assembly, 'EditorCommandSave', '');
         },
         readOnly: false // false if this command should not apply in readOnly mode
     });
@@ -48,28 +50,4 @@ window.ace_set_mode = function (id, mode) {
 window.ace_set_value = function (id, value) {
     var editor = ace.edit(id);
     editor.setValue(value, 1);
-}
-
-window.ace_change = function updateMessageCallerJS(editor) {
-    DotNet.invokeMethodAsync(assembly, 'AceEditorValueChanged', editor.getValue());
-}
-
-window.ScrollIntoView = function (id, parentId, addMargin) {
-    var element = document.getElementById(id);
-    var parentElement = document.getElementById(parentId);
-    if (element != null) {
-        element.scrollIntoView();
-    }
-    if (addMargin) {
-        if (isLeftSide(element))
-            parentElement.scrollLeft -= 50;
-        else
-            parentElement.scrollLeft += 50;
-    }
-}
-
-function isLeftSide(element) {
-    var viewWidth = Math.max(document.documentElement.clientWidth, window.innerWidth);
-    var x = element.getBoundingClientRect().x;
-    return x <= (viewWidth / 2);
 }

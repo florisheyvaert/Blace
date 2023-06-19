@@ -15,13 +15,14 @@ steps:
   inputs:
     command: 'build'
     projects: '**/Blace.csproj'
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   displayName: 'Pack package'
   inputs:
     command: 'pack'
     packagesToPack: '**/Blace.csproj'
     versioningScheme: 'off'
-- task: NuGetCommand@2
+    
+- task: DotNetCoreCLI@2
   displayName: 'Publish package'
   inputs:
     command: 'push'

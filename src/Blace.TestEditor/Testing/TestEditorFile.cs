@@ -14,12 +14,12 @@ namespace Blace.TestEditor.Testing
             Name = name;
         }
 
-        public override Task<string> LoadContent()
+        protected override Task<string> LoadContent()
         {
             return Task.FromResult("Dit is een test");
         }
 
-        public override Task<bool> SaveContent()
+        protected override Task<bool> SaveContent()
         {
             return Task.FromResult(true);
         }

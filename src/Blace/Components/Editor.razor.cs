@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Blace.Components
 {
-    public partial class Editor<T> where T : BaseEditorFile
+    public partial class Editor<T> where T : EditorFile
     {
         private AceEditor _editor;
         private T _file;
@@ -31,24 +31,31 @@ namespace Blace.Components
 
         public async Task Reload()
         {
-            var content = await _file.Load();
-            await _editor.SetValue(content);
+            if (!IsClosed)
+            {
+                var content = await _file.Load();
+                await _editor.SetValue(content);
+            }
         }
 
         public async Task Save(bool close = false)
         {
-            await _file.Save();
-            await InvokeAsync(StateHasChanged);
-
-            if (close)
+            if (!IsClosed)
             {
-                await Close();
+                await _file.Save();
+                await InvokeAsync(StateHasChanged);
+
+                if (close)
+                {
+                    await Close();
+                }
             }
         }
 
         public async Task Close()
         {
             await _editor.SetValue(string.Empty);
+
             IsClosed = true;
             _file = null;
             _editor = null;

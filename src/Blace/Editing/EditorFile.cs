@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blace.Editing
 {
-    public abstract class BaseEditorFile : IEquatable<BaseEditorFile>, IEqualityComparer<BaseEditorFile>
+    public abstract class EditorFile : IEquatable<EditorFile>, IEqualityComparer<EditorFile>
     {
         private string _originalContent;
 
@@ -15,10 +15,10 @@ namespace Blace.Editing
         public string Content { get; set; }
         public bool IsChanged { get => _originalContent != Content; }
 
-        public abstract Task<bool> SaveContent();
-        public abstract Task<string> LoadContent();
+        protected abstract Task<bool> SaveContent();
+        protected abstract Task<string> LoadContent();
 
-        public BaseEditorFile(string name)
+        public EditorFile(string name)
         {
             Name = name;
         }
@@ -37,22 +37,22 @@ namespace Blace.Editing
             return success;
         }
 
-        public bool Equals(BaseEditorFile other)
+        public bool Equals(EditorFile other)
         {
             return Equals(this, other);
         }
 
-        public bool Equals(BaseEditorFile x, BaseEditorFile y)
+        public bool Equals(EditorFile x, EditorFile y)
         {
             return x.Name == y.Name;
         }
 
-        public int GetHashCode([DisallowNull] BaseEditorFile obj)
+        public int GetHashCode([DisallowNull] EditorFile obj)
         {
             return obj.Name.GetHashCode();
         }
 
-        public static bool operator ==(BaseEditorFile obj1, BaseEditorFile obj2)
+        public static bool operator ==(EditorFile obj1, EditorFile obj2)
         {
             if (ReferenceEquals(obj1, obj2))
             {
@@ -70,14 +70,14 @@ namespace Blace.Editing
             return obj1.Equals(obj2);
         }
 
-        public static bool operator !=(BaseEditorFile obj1, BaseEditorFile obj2)
+        public static bool operator !=(EditorFile obj1, EditorFile obj2)
         {
             return !(obj1 == obj2);
         }
 
         public override bool Equals(object obj)
         {
-            return Equals(obj as BaseEditorFile);
+            return Equals(obj as EditorFile);
         }
 
         public override int GetHashCode()

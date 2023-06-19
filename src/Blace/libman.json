@@ -3,7 +3,7 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "ace@1.4.12",
+      "library": "ace@1.22.1",
       "destination": "wwwroot/ace/"
     }
   ]

@@ -16,13 +16,15 @@ namespace Blace.Components
 
         [Inject] public IJSRuntime JS { get; set; }
 
+        [Parameter] public EventCallback FileChanged { get; set; }
+
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public bool IsClosed { get; set; }
 
         public async Task Open(T file, EditorOptions options = null)
         {
             _file = file;
-            _editor = new AceEditor(JS, Id, options);
+            _editor = new AceEditor(JS, Id, options, FileChanged, Save);
 
             IsClosed = false;
 

@@ -1,4 +1,5 @@
 ﻿using Blace.Components;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
@@ -13,16 +14,20 @@ namespace Blace.Editing
     {
         private readonly IJSRuntime _js;
         private readonly EditorOptions _options;
+        private static Func<bool, Task> _save;
+        private static EventCallback _fileChanged;
 
         public string Id { get; private set; }
         public string Theme { get; private set; }
         public string Mode { get; private set; }
         public string Value { get; private set; }
 
-        public AceEditor(IJSRuntime js, string id, EditorOptions options)
+        public AceEditor(IJSRuntime js, string id, EditorOptions options, EventCallback fileChanged = default, Func<bool, Task> save = null)
         {
             _js = js;
             _options = options ?? new();
+            _fileChanged = fileChanged;
+            _save = save;
             Id = id;
 
             LoadOptions();
@@ -57,15 +62,21 @@ namespace Blace.Editing
         }
 
         [JSInvokable]
-        public static void EditorValueChanged(string value)
+        public static async void EditorValueChanged(string value)
         {
-            // todo
+            await _fileChanged.InvokeAsync();
         }
 
         [JSInvokable]
-        public static async Task EditorCommandSave()
+        public static async Task EditorCommandPressed(string command)
         {
-            // todo
+            if (Enum.TryParse<Shortcut>(command, ignoreCase: true, out var shortcut))
+            {
+                if (shortcut == Shortcut.Save)
+                {
+                    await _save.Invoke(false);
+                }
+            }
         }
     }
 }

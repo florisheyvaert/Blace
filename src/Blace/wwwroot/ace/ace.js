@@ -31,7 +31,7 @@ window.ace_load = function (id, theme, mode) {
         name: 'SaveCmomand',
         bindKey: { win: 'Ctrl-S', mac: 'Command-S' },
         exec: function (editor) {
-            DotNet.invokeMethodAsync(assembly, 'EditorCommandSave', '');
+            DotNet.invokeMethodAsync(assembly, 'EditorCommandPressed', 'save');
         },
         readOnly: false // false if this command should not apply in readOnly mode
     });

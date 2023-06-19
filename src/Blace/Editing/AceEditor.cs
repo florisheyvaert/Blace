@@ -15,14 +15,14 @@ namespace Blace.Editing
         private readonly IJSRuntime _js;
         private readonly EditorOptions _options;
         private static Func<bool, Task> _save;
-        private static EventCallback<bool> _fileChanged;
+        private static Func<string, Task> _fileChanged;
 
         public string Id { get; private set; }
         public Theme Theme { get => _options.Theme; }
         public Syntax Syntax { get => _options.Syntax; }
         public static string Value { get; private set; }
 
-        public AceEditor(IJSRuntime js, string id, EditorOptions options, EventCallback<bool> fileChanged = default, Func<bool, Task> save = null)
+        public AceEditor(IJSRuntime js, string id, EditorOptions options, Func<string, Task> fileChanged = default, Func<bool, Task> save = null)
         {
             _js = js;
             _options = options ?? new();
@@ -35,10 +35,8 @@ namespace Blace.Editing
         {
             await _js.InvokeVoidAsync("ace_load", Id, GetTheme(Theme), GetSyntax(Syntax));
 
-            var text = string.IsNullOrWhiteSpace(value) ? string.Empty : value;
-            await _js.InvokeVoidAsync("ace_set_value", Id, text);
-
-            Value = text;
+            Value = string.IsNullOrWhiteSpace(value) ? string.Empty : value; ;
+            await _js.InvokeVoidAsync("ace_set_value", Id, Value);
         }
 
         public async Task SetTheme(Theme theme)
@@ -56,8 +54,7 @@ namespace Blace.Editing
         [JSInvokable]
         public static async void EditorValueChanged(string value)
         {
-            var isChanged = Value != value;
-            await _fileChanged.InvokeAsync(isChanged);
+            await _fileChanged.Invoke(value);
         }
 
         [JSInvokable]

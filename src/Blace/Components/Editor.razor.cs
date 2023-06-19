@@ -25,7 +25,7 @@ namespace Blace.Components
         public async Task Open(T file, EditorOptions options = null)
         {
             _file = file;
-            _editor = new AceEditor(JS, Id, options, FileChanged, Save);
+            _editor = new AceEditor(JS, Id, options, FileChange, Save);
 
             IsClosed = false;
 
@@ -67,6 +67,13 @@ namespace Blace.Components
             _editor = null;
 
             await InvokeAsync(StateHasChanged);
+        }
+
+        public async Task FileChange(string content)
+        {
+            var isChanged = _file.Content != content;
+            _file.Content = content;
+            await FileChanged.InvokeAsync(isChanged);
         }
     }
 }

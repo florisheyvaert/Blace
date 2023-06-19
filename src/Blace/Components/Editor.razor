@@ -1,8 +1,17 @@
-﻿@inherits EditorBase
+﻿@typeparam T where T : EditorFile
 
-<div class="editor-container">
+<div class="editor-container" hidden="@IsClosed">
 
-    <div class="editor-header" id="editor-header">
+    <div class="editor-content">
+
+        <div id="@Id">
+        </div>
+
+    </div>
+
+</div>
+
+@*    <div class="editor-header" id="editor-header">
         @if (Files is object && Files.Count > 0)
         {
             @foreach (var file in Files)
@@ -35,6 +44,5 @@
         </div>
 
         <Settings Editor="AceEditor" Hidden="SettingsHidden" />
-    </div>
+    </div>*@
 
-</div>

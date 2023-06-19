@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blace.TestEditor.Testing
 {
-    public class TestEditorFile : BaseEditorFile
+    public class TestEditorFile : EditorFile
     {
         public TestEditorFile(string name) : base(name)
         {

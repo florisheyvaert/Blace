@@ -3,46 +3,34 @@
 @using Testing
 @using Editing
 
-<button @onclick="async() => await AddFile()">Add file</button>
+<button @onclick="AddFile">Add</button>
+<button @onclick="CloseFile">Close</button>
+<button @onclick="SaveFile">Save</button>
+<button @onclick="ReloadFile">Reload</button>
 
-    <Blace.Components.Editor @ref="Editor" Files="Files" />
+<Blace.Components.Editor @ref="Editor" T="TestEditorFile" />
 
 @code {
-    public List<BaseEditorFile> Files { get; set; }
-    public Editor Editor { get; set; }
+    public Editor<TestEditorFile> Editor { get; set; }
 
     protected async Task AddFile()
     {
-        await Editor.OpenFile(new TestEditorFile("file1"));
+        var newFile = new TestEditorFile("file4");
+        await Editor.Open(newFile);
     }
 
-    protected override Task OnInitializedAsync()
+    protected async Task CloseFile()
     {
-        Files = new List<BaseEditorFile>()
-    {
-            new TestEditorFile("file1"),
-            new TestEditorFile("file2"),
-            new TestEditorFile("file3"),
-            //new TestEditorFile("file test met een redelijk lange naam omte zien wa te doen"),
-            //new TestEditorFile("file1"),
-            //new TestEditorFile("file2"),
-            //new TestEditorFile("file3"),
-            //new TestEditorFile("file1"),
-            //new TestEditorFile("file2"),
-            //new TestEditorFile("file3"),
-            //new TestEditorFile("file1"),
-            //new TestEditorFile("file2"),
-            //new TestEditorFile("file3"),
-            //new TestEditorFile("file1"),
-            //new TestEditorFile("file test met een redelijk lange naam omte zien wa te doen"),
-            //new TestEditorFile("file2"),
-            //new TestEditorFile("file3"),
-            //new TestEditorFile("file1"),
-            //new TestEditorFile("file2"),
-            //new TestEditorFile("file3"),
-
-        };
-        return base.OnInitializedAsync();
+        await Editor.Close();
     }
 
+    protected async Task SaveFile()
+    {
+        await Editor.Save();
+    }
+
+    protected async Task ReloadFile()
+    {
+        await Editor.Reload();
+    }
 }

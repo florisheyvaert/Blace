@@ -3,7 +3,6 @@
     height: 5rem;
 }
 
-.editor_content,
 .ace_editor {
     height: 100%;
 }

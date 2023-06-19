@@ -16,7 +16,8 @@ namespace Blace.Components
 
         [Inject] public IJSRuntime JS { get; set; }
 
-        [Parameter] public EventCallback FileChanged { get; set; }
+        [Parameter] public EventCallback<bool> FileChanged { get; set; }
+        [Parameter] public string CssClass { get; set; }
 
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public bool IsClosed { get; set; }

@@ -48,6 +48,8 @@ namespace Blace.Components
             if (!IsClosed)
             {
                 await _file.Save();
+                await FileChanged.InvokeAsync(false);
+                
                 await InvokeAsync(StateHasChanged);
 
                 if (close)

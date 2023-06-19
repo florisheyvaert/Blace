@@ -8,7 +8,7 @@ namespace Blace.Editing
 {
     public class EditorOptions
     {
-        public string Theme { get; set; }
-        public string Syntax { get; set; }
+        public Theme Theme { get; set; }
+        public Syntax Syntax { get; set; }
     }
 }

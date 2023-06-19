@@ -18,8 +18,8 @@ namespace Blace.Editing
         private static EventCallback _fileChanged;
 
         public string Id { get; private set; }
-        public string Theme { get; private set; }
-        public string Mode { get; private set; }
+        public Theme Theme { get => _options.Theme; }
+        public Syntax Syntax { get => _options.Syntax; }
         public string Value { get; private set; }
 
         public AceEditor(IJSRuntime js, string id, EditorOptions options, EventCallback fileChanged = default, Func<bool, Task> save = null)
@@ -29,13 +29,11 @@ namespace Blace.Editing
             _fileChanged = fileChanged;
             _save = save;
             Id = id;
-
-            LoadOptions();
         }
 
         public async Task SetValue(string value)
         {
-            await _js.InvokeVoidAsync("ace_load", Id, Theme, Mode);
+            await _js.InvokeVoidAsync("ace_load", Id, GetTheme(Theme), GetSyntax(Syntax));
 
             var text = string.IsNullOrWhiteSpace(value) ? string.Empty : value;
             await _js.InvokeVoidAsync("ace_set_value", Id, text);
@@ -43,22 +41,16 @@ namespace Blace.Editing
             Value = text;
         }
 
-        public async Task SetTheme(string theme)
+        public async Task SetTheme(Theme theme)
         {
-            await _js.InvokeVoidAsync("ace_set_theme", Id, theme);
-            Theme = theme;
+            await _js.InvokeVoidAsync("ace_set_theme", Id, GetTheme(theme));
+            _options.Theme = theme;
         }
 
-        public async Task SetMode(string mode)
+        public async Task SetSyntax(Syntax syntax)
         {
-            await _js.InvokeVoidAsync("ace_set_mode", Id, mode);
-            Mode = mode;
-        }
-
-        private void LoadOptions()
-        {
-            Mode = !string.IsNullOrWhiteSpace(_options.Syntax) ? _options.Syntax : "ace/mode/text";
-            Theme = !string.IsNullOrWhiteSpace(_options.Theme) ? _options.Theme : "ace/theme/monokai";
+            await _js.InvokeVoidAsync("ace_set_mode", Id, GetSyntax(syntax));
+            _options.Syntax = syntax;
         }
 
         [JSInvokable]
@@ -78,5 +70,8 @@ namespace Blace.Editing
                 }
             }
         }
+
+        private string GetTheme(Theme theme) => $"ace/theme/{theme.ToString().ToLowerInvariant()}";
+        private string GetSyntax(Syntax syntax) => $"ace/mode/{syntax.ToString().ToLowerInvariant()}";
     }
 }

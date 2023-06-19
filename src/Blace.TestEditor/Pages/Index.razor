@@ -16,7 +16,7 @@
     protected async Task AddFile()
     {
         var newFile = new TestEditorFile("file4");
-        await Editor.Open(newFile);
+        await Editor.Open(newFile, new() { Syntax = Syntax.Python, Theme = Theme.Chrome });
     }
 
     protected async Task CloseFile()

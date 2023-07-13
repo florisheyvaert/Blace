@@ -8,7 +8,7 @@
 <button @onclick="SaveFile">Save</button>
 <button @onclick="ReloadFile">Reload</button>
 
-<Blace.Components.Editor @ref="Editor" T="TestEditorFile" />
+<Blace.Components.Editor @ref="Editor" T="TestEditorFile" ShowSettings="true" />
 
 @code {
     public Editor<TestEditorFile> Editor { get; set; }

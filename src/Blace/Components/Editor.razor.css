@@ -6,3 +6,49 @@
 .ace_editor {
     height: 100%;
 }
+
+.settings {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    z-index: 2;
+    border-radius: 50%;
+    background: #eee;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.settings-icon {
+    margin: 0;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.settings-panel {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    width: 15rem;
+    padding: .5rem;
+    background: #eee;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: .25rem;
+    z-index: 2;
+}
+
+    .settings-panel label {
+        width: 100%;
+        display: inline-block;
+        margin-bottom: .25rem;
+    }
+
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}

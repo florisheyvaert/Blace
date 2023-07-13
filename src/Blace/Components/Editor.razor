@@ -14,10 +14,10 @@
                         <label>
                             Theme
                         </label>
-                        <InputSelect Value="Theme" ValueChanged="ThemeChanged" TValue="Theme" ValueExpression="(() => Theme)" style="width: 100%; padding: .25rem;">
+                        <InputSelect Value="Theme" ValueChanged="ThemeChanged" TValue="Theme" ValueExpression="(() => Theme)" style="width: 100%; padding: .25rem;" class="form-control">
                             @foreach (var theme in Enum.GetValues<Theme>())
                             {
-                                <option value="@theme">@theme.ToString()</option>
+                                <option value="@theme" class="form-check-input">@theme.ToString()</option>
                             }
                         </InputSelect>
                     </div>
@@ -26,10 +26,10 @@
                         <label>
                             Syntax
                         </label>
-                        <InputSelect Value="Syntax" ValueChanged="SyntaxChanged" TValue="Syntax" ValueExpression="(() => Syntax)" style="width: 100%; padding: .25rem;">
+                        <InputSelect Value="Syntax" ValueChanged="SyntaxChanged" TValue="Syntax" ValueExpression="(() => Syntax)" style="width: 100%; padding: .25rem;" class="form-control">
                             @foreach (var syntax in Enum.GetValues<Syntax>())
                             {
-                                <option value="@syntax">@syntax.ToString()</option>
+                                <option value="@syntax" class="form-check-input">@syntax.ToString()</option>
                             }
                         </InputSelect>
                     </div>

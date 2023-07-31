@@ -7,16 +7,21 @@
 <button @onclick="CloseFile">Close</button>
 <button @onclick="SaveFile">Save</button>
 <button @onclick="ReloadFile">Reload</button>
+<input type="number" min="0" max="@MaxLinesValue" value="@MinLinesValue" @onchange="@((args) => SetMinLines(args))">
+<input type="number" min="@MinLinesValue" max="100" value="@MaxLinesValue" @onchange="@((args) => SetMaxLines(args))">
 
 <Blace.Components.Editor @ref="Editor" T="TestEditorFile" ShowSettings="true" />
 
 @code {
     public Editor<TestEditorFile> Editor { get; set; }
 
+    public int MinLinesValue = 5;
+    public int MaxLinesValue = 10;
+
     protected async Task AddFile()
     {
         var newFile = new TestEditorFile("file4");
-        await Editor.Open(newFile, new() { Syntax = Syntax.Python, Theme = Theme.Chrome });
+        await Editor.Open(newFile, new() { Syntax = Syntax.Python, Theme = Theme.Chrome, MinLines = MinLinesValue, MaxLines = MaxLinesValue });
     }
 
     protected async Task CloseFile()
@@ -32,5 +37,21 @@
     protected async Task ReloadFile()
     {
         await Editor.Reload();
+    }
+
+    protected async Task SetMinLines(ChangeEventArgs args)
+    {
+        int value = Convert.ToInt32(args.Value);
+        await Editor.SetMinLines(Convert.ToInt32(args.Value));
+        MinLinesValue = value;
+        StateHasChanged();
+    }
+
+    protected async Task SetMaxLines(ChangeEventArgs args)
+    {
+        int value = Convert.ToInt32(args.Value);
+        await Editor.SetMaxLines(Convert.ToInt32(args.Value));
+        MaxLinesValue = value;
+        StateHasChanged();
     }
 }

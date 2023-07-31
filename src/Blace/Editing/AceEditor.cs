@@ -20,6 +20,8 @@ namespace Blace.Editing
         public string Id { get; private set; }
         public Theme Theme { get => _options.Theme; }
         public Syntax Syntax { get => _options.Syntax; }
+        public int MinLines { get => _options.MinLines; }
+        public int MaxLines { get => _options.MaxLines; }
         public static string Value { get; private set; }
 
         public AceEditor(IJSRuntime js, string id, EditorOptions options, Func<string, Task> fileChanged = default, Func<bool, Task> save = null)
@@ -33,7 +35,7 @@ namespace Blace.Editing
 
         public async Task SetValue(string value)
         {
-            await _js.InvokeVoidAsync("ace_load", Id, GetTheme(Theme), GetSyntax(Syntax));
+            await _js.InvokeVoidAsync("ace_load", Id, GetTheme(Theme), GetSyntax(Syntax), MinLines, MaxLines);
 
             Value = string.IsNullOrWhiteSpace(value) ? string.Empty : value; ;
             await _js.InvokeVoidAsync("ace_set_value", Id, Value);
@@ -49,6 +51,18 @@ namespace Blace.Editing
         {
             await _js.InvokeVoidAsync("ace_set_mode", Id, GetSyntax(syntax));
             _options.Syntax = syntax;
+        }
+
+        public async Task SetMinLines(int minLines)
+        {
+            await _js.InvokeVoidAsync("ace_set_min_lines", Id, minLines);
+            _options.MinLines = minLines;
+        }
+
+        public async Task SetMaxLines(int maxLines)
+        {
+            await _js.InvokeVoidAsync("ace_set_max_lines", Id, maxLines);
+            _options.MaxLines = maxLines;
         }
 
         [JSInvokable]

@@ -27,6 +27,8 @@ namespace Blace.Components
         public bool ShowSettingsPanel { get; set; }
         public Theme Theme { get; set; }
         public Syntax Syntax { get; set; }
+        public int MinLines { get; set; }
+        public int MaxLines { get; set; }
 
         public async Task Open(T file, EditorOptions options = null)
         {
@@ -91,6 +93,22 @@ namespace Blace.Components
         {
             Theme = theme;
             await _editor?.SetTheme(Theme);
+        }
+
+        public async Task SetMinLines(int minLines)
+        {
+            if (_editor == null) return;
+
+            MinLines = minLines;
+            await _editor?.SetMinLines(minLines);
+        }
+
+        public async Task SetMaxLines(int maxLines)
+        {
+            if (_editor == null) return;
+
+            MaxLines = maxLines;
+            await _editor?.SetMaxLines(maxLines);
         }
 
         public async Task SyntaxChanged(Syntax syntax)

@@ -12,5 +12,6 @@ namespace Blace.Editing
         public Syntax Syntax { get; set; }
         public int MinLines { get; set; } = 10;
         public int MaxLines { get; set; }
+        public bool ReadOnly { get; set; }
     }
 }

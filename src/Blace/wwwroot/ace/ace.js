@@ -17,14 +17,15 @@
 
 assembly = "Blace";
 
-window.ace_load = function (id, theme, mode, min_lines, max_lines) {
+window.ace_load = function (id, theme, mode, min_lines, max_lines, readonly) {
     var editor = ace.edit(id);
     editor.setTheme(theme);
     editor.session.setMode(mode);
     editor.setShowPrintMargin(false);
     editor.setOptions({
         minLines: min_lines,
-        maxLines: max_lines
+        maxLines: max_lines,
+        readOnly: readonly
     });
     editor.session.on("change", function () {
         DotNet.invokeMethodAsync(assembly, 'EditorValueChanged', editor.getValue());
@@ -66,5 +67,12 @@ window.ace_set_max_lines = function (id, max_lines) {
     var editor = ace.edit(id);
     editor.setOptions({
         maxLines: max_lines
+    });
+}
+
+window.ace_set_readonly = function (id, readonly) {
+    var editor = ace.edit(id);
+    editor.setOptions({
+        readOnly: readonly
     });
 }
